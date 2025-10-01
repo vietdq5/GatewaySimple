@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateways", "src\Gateways.csproj", "{24A8D317-023C-62DA-5C7F-4B9633D7A2E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24A8D317-023C-62DA-5C7F-4B9633D7A2E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A8D317-023C-62DA-5C7F-4B9633D7A2E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A8D317-023C-62DA-5C7F-4B9633D7A2E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A8D317-023C-62DA-5C7F-4B9633D7A2E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCFE01D5-A5E7-4E25-B093-9FC86CA1A744}
+	EndGlobalSection
+EndGlobal

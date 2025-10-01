@@ -1,0 +1,68 @@
+# Replicas
+replicaCount: 1
+# gateway-service:v1.0.0
+# Image configuration
+image:
+  repository: gateway-service
+  pullPolicy: IfNotPresent
+  tag: "v1.0.1"
+
+# Service configuration
+service:
+  type: LoadBalancer  # Thay đổi từ ClusterIP thành LoadBalancer cho Docker Desktop
+  port: 80
+  targetPort: 8080
+
+# Ingress configuration (tắt mặc định)
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: gateway.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+# Resources
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+# Environment variables
+env:
+  - name: ASPNETCORE_ENVIRONMENT
+    value: "Production"
+  - name: ASPNETCORE_URLS
+    value: "http://+:8080"
+
+# Config
+config:
+  jwt:
+    issuer: "Gateway"
+    audience: "ApiUsers"
+    key: "YourSuperSecretKeyThatIsAtLeast32CharactersLong!@#$%"
+  
+  # services:
+  #   todoServiceUrl: "http://todo-service:80/"
+  #   notificationServiceUrl: "http://notification-service:80/"
+  
+  # reverseProxy:
+  #   routes:
+  #     todoRoute:
+  #       enabled: true
+  #       path: "/api/Todos/{**catch-all}"
+  #       clusterId: "todo-cluster"
+  #     notificationRoute:
+  #       enabled: true
+  #       path: "/api/notifications/{**catch-all}"
+  #       clusterId: "notification-cluster"
+  #     notificationHubRoute:
+  #       enabled: true
+  #       path: "/hub/notifyHub/{**catch-all}"
+  #       clusterId: "notification-cluster"
